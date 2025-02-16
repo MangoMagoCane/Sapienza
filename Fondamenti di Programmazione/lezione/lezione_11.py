@@ -1,9 +1,6 @@
 import sys
-from typing import TypeAlias
 import lib.image as image
-
-Color: TypeAlias = tuple[int, int, int]
-Img: TypeAlias = list[list[Color]]
+from lib.types import *
 
 
 def size(ll: list[list]) -> tuple[int, int, int, int]:

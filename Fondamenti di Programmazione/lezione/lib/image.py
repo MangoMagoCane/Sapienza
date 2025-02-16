@@ -1,4 +1,4 @@
-import png
+from lib import png
 import random
 import math
 import io
