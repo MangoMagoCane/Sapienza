@@ -15,6 +15,14 @@ def words(s):
     return s.split()
 
 
+def fwords(filename, encoding="utf-8"):
+    """Ritorna la lista di parole contenute nel file filename,
+    aperto con encoding indicato (default 'utf-8')"""
+    with open(filename, encoding=encoding) as f:
+        text = f.read()
+    return words(text)
+
+
 if __name__ == "__main__":
 
     def test_noalpha(s):

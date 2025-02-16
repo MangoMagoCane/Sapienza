@@ -2,7 +2,7 @@ import io
 import os
 import time
 import requests
-import files_9_lezione.words as words
+import files_1.words as words
 from lezione_6 import countw
 
 
@@ -50,10 +50,10 @@ def findurl(lista_url: list[str], s: str, k: int) -> list[str]:
 
 
 def main():
-    os.chdir("files_9_lezione")
+    os.chdir("files_1")
     print(clines("testo.txt", "err"))
     print(clines("testo.txt", "Errori"))
-    print(all_char("testo.txt", "utf8"))
+    print(all_char("testo.txt", "utf-8"))
     print(anagrams("alice.txt", "read"))
     with open("log.log", "a") as file:
         log_update(file, "New event!")
