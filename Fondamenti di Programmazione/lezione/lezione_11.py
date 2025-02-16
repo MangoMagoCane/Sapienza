@@ -1,6 +1,6 @@
 import sys
-from typing import TypeAlias, Literal
-from files_2 import image
+from typing import TypeAlias
+import lib.image as image
 
 Color: TypeAlias = tuple[int, int, int]
 Img: TypeAlias = list[list[Color]]

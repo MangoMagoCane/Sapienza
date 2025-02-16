@@ -1,5 +1,5 @@
 import os
-import files_1.words as words
+import lib.words as words
 
 
 def wset(fname: str) -> set[str]:

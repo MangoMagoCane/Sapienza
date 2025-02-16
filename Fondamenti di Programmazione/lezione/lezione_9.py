@@ -2,7 +2,7 @@ import io
 import os
 import time
 import requests
-import files_1.words as words
+import lib.words as words
 from lezione_6 import countw
 
 
