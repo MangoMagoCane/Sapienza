@@ -36,7 +36,7 @@ class Immagine:
         return b.getvalue()
 
 
-def visd(img, didascalia=""):
+def visd(img, didascalia: str | None = ""):
     """Visualizza una immagine in una console IPython seguita da una didascalia opzionale"""
     ipd.display(Immagine(img))
     if didascalia:
