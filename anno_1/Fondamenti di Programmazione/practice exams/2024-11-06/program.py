@@ -56,15 +56,26 @@ Example: if int_list=[4, 6, 10, 13] and keys={2, 3, 5}
 
 
 def func1(int_list: list[int], keys: set[int]) -> dict[int, list[int]]:
-    # INSERT HERE YOUR CODE
     dct: dict[int, list[int]] = {k: [] for k in keys}
-    for key in keys:
-        for x in int_list:
-            if x % key == 0:
-                dct[key].append(x)
+    for i in int_list:
+        for key in dct.keys():
+            if i % key == 0:
+                dct[key].append(i)
+
     for key in dct:
         dct[key] = sorted(dct[key], reverse=True)
+
     return dct
+
+    # # INSERT HERE YOUR CODE
+    # dct: dict[int, list[int]] = {k: [] for k in keys}
+    # for key in keys:
+    #     for x in int_list:
+    #         if x % key == 0:
+    #             dct[key].append(x)
+    # for key in dct:
+    #     dct[key] = sorted(dct[key], reverse=True)
+    # return dct
 
 
 # int_list=[4, 6, 10, 13]

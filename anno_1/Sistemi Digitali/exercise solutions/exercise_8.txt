@@ -1,0 +1,16 @@
+Es. 1
+
+!x + yz = !x + z(!x+y)
+!x + z(!x+y) = !x + z!x + yz
+!x + z!x + yz = !x + yz 
+
+Es. 2
+
+ab + bc + ca = (a+b)(b+c)(c+a)
+(a+b)(b+c)(c+a) = a(b+c)(c+a) + b(b+c)(c+a)
+a(b+c)(c+a) + b(b+c)(c+a) = ab(c+a) + ac(c+a) + bb(c+a) + bc(c+a)
+ab(c+a) + ac(c+a) + bb(c+a) + bc(c+a) = abc + aab + acc + aac + bbc + abb + bcc + abc
+abc + aab + acc + aac + bbc + abb + bcc + abc = abc + ab + ac + bc
+abc + ab + ac + bc = ab(c+1) + bc + ac
+ab(c+1) + bc + ac = ab + b + ac
+
