@@ -297,7 +297,10 @@ def ex2(dirin: str, words: list[str]) -> list[tuple[str, int]]:
 
 def recurs(dirin: str, words: list[str]) -> dict[str, int]:
     tmp_dct: dict[str, int] = {w: 0 for w in words}
+    # print(dirin)
+    print("bar --", dirin + os.listdir(dirin)[0])
     for filename in map(lambda n: dirin + "/" + n, os.listdir(dirin)):
+        print("foo", filename)
         if os.path.isfile(filename) and filename.endswith(".txt"):
             # print("foo", filename)
             mergedicts(tmp_dct, handlefile(filename, words))
