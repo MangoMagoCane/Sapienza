@@ -1,8 +1,8 @@
 .data
   vector: .word  1, 2, 3, 4, 5, 6, 7, 8, 9
-  N: 	  .word  9
-  sum:	  .word  0
-  
+  N:      .word  9
+  sum:    .word  0
+
 .text
 main:
 	lw	$t1, N

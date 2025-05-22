@@ -1,0 +1,35 @@
+name: Build & Release Typst Documents
+on: [push, workflow_dispatch]
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: typst-community/setup-typst@v3
+      - run: |
+          curl -LO https://github.com/microsoft/cascadia-code/releases/download/v2404.23/CascadiaCode-2404.23.zip
+          unzip CascadiaCode-2404.23.zip -d ~/cascadia-code
+          sudo cp ~/cascadia-code/otf/static/*.otf /usr/local/share/fonts
+          sudo fc-cache -f -v
+          typst compile java-swing-mvc.typ java-swing-mvc.pdf
+          typst compile git.typ git.pdf
+      - uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          automatic_release_tag: 'latest'
+          prerelease: false
+          files: |
+            java-swing-mvc.pdf
+            git.pdf
+      - uses: dev-drprasad/delete-older-releases@v0.3.3
+        with:
+          keep_latest: 1
+          delete_tags: true
+          delete_tag_pattern: latest 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
